@@ -1,0 +1,144 @@
+body {
+  background:linear-gradient(135deg,#134c65,#367d87);
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  display: flex;
+  border:none;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#app {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+#search-section {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #021883, #0277bd);
+  color: black;
+  border-radius: 10px;
+}
+
+#city-input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #134c65;
+  width: 100%;
+  max-width: 300px;
+}
+
+#city-suggestions {
+  position: absolute;
+  background: #ddd;
+  border: 1px solid #0277bd;
+  border-radius: 8px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  z-index: 10;
+  display: none;
+}
+#city-suggestions p {
+  padding: 8px;
+  margin: 0;
+  cursor: pointer;
+  transition: background 0.2s, padding 0.2s;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+#city-suggestions p:hover {
+  background: rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
+}
+
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0277bd;
+  color: white;
+  border-radius: 13px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #0263a3;
+}
+#forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 18%;
+  min-width: 150px;
+  flex-grow: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.forecast-card img {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0;
+}
+
+.forecast-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  #app {
+      padding: 15px;
+  }
+
+  #city-input {
+      max-width: 100%;
+  }
+
+  .forecast-card {
+      width: 45%;
+  }
+}
+

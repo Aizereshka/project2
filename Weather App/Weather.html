@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="Weather.css">
+</head>
+<body>
+    <div id="app" role="main">
+        <header id="search-section" role="search">
+            <form id="search-form" onsubmit="getWeather(event)">
+                <label for="city-input" class="visually-hidden">Enter city name:</label>
+                <input 
+                    type="text" 
+                    id="city-input" 
+                    placeholder="Enter city name" 
+                    oninput="searchCity()" 
+                    aria-label="Enter city name"
+                >
+                <button type="submit" aria-label="Search Weather">Search</button>
+            </form>
+            <div id="city-suggestions"></div>
+        </header>
+        
+        <section id="weather-display" aria-live="polite">
+            <div id="loading" style="display:none;">Loading...</div> 
+            <div id="current-weather" class="weather-card" aria-labelledby="current-weather-heading">
+                <h2 id="current-weather-heading" class="visually-hidden">Current Weather</h2>
+            </div>
+            <div id="forecast" aria-labelledby="forecast-heading">
+                <h2 id="forecast-heading" class="visually-hidden">5-Day Forecast</h2>
+            </div>
+        </section>
+        
+        <div id="buttons" role="group" aria-label="Weather Controls">
+            <button onclick="getLocationWeather()" aria-label="Use Current Location">Use Current Location</button>
+            <button onclick="toggleUnits()" aria-label="Toggle Temperature Units">toggleUnits</button>
+        </div>
+    </div>
+    
+    <script src="s3.js"></script>
+</body>
+</html>
