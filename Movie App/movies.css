@@ -1,0 +1,332 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #2c3e50, #34495e); 
+    background-size: cover; 
+    background-position: center;
+    height: 100vh;
+}
+button {
+    background-color: #040f1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 13px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    text-align: center;
+}
+button:hover {
+    background-color: #091522;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+button + button {
+    margin-left: 10px;
+}
+
+
+#search-section {
+    text-align: center;
+    padding: 20px;
+}
+#search-input {
+    padding: 10px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    outline: none;
+}
+#suggestions {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+#suggestions div:hover {
+    background-color: #ddd;
+}
+
+#sort-section {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#sort-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #021027;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#sort-section button:hover {
+    background-color: #282467;
+    transform: translateY(-2px);
+}
+
+#sort-section button:active {
+    background-color:  #282467; 
+    transform: translateY(2px); 
+}
+
+#sort-section button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(46, 83, 204, 0.8);
+}
+
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+#pagination {
+    text-align: center;
+    margin: 20px;
+}
+
+#pagination button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #031420;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#genre-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#genre-filter select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #f39c12;
+    background-color: #34495e;
+    color: white;
+    width: 250px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#genre-filter select:hover {
+    background-color: #f39c12;
+    border-color: #e67e22;
+}
+
+#genre-filter option {
+    background-color: #34495e;
+    color: white;
+}
+
+#genre-filter select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(243, 156, 18, 0.8);
+}
+
+
+#movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie-card {
+    background-color: #396e87;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+#watchlist-section {
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#watchlist-section h2 {
+    color: #f39c12; 
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#watchlist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.watchlist-item {
+    background-color: #396e87;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.watchlist-item:hover {
+    transform: scale(1.05);
+}
+
+.watchlist-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.watchlist-item h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.watchlist-item p {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: #34495e;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    overflow-y: auto;
+    max-height: 80vh;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: #f39c12;
+    cursor: pointer;
+}
+@media (max-width: 600px) {
+    #search-input {
+        width: 90%;
+    }
+
+    #sort-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #movies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #genre-filter select {
+        width: 100%;
+    }
+
+    #watchlist-section {
+        width: 100%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    #movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    #genre-filter select {
+        width: 60%;
+    }
+}
+@media (min-width: 1025px) {
+    #movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}

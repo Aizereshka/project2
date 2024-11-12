@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies App</title>
+    <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+    <div id="search-section">
+        <input type="text" id="search-input" placeholder="Search for movies..." oninput="searchMovies()" autocomplete="off">
+        <div id="suggestions"></div>
+    </div>
+    
+    <div id="sort-section">
+        <button onclick="sortMovies('popularity')">Sort by Popularity</button>
+        <button onclick="sortMovies('release_date')">Sort by Release Date</button>
+        <button onclick="sortMovies('vote_average')">Sort by Rating</button>
+    </div>
+    <div id="loading">Loading...</div>
+    <div id="pagination">
+        <button id="prev-page">Previous</button>
+        <button id="next-page">Next</button>
+    </div>
+
+    <div id="genre-filter">
+        <select onchange="filterByGenre(this.value)">
+            <option value="">Select Genre</option>
+            <option value="28">Action</option>
+            <option value="35">Comedy</option>
+            <option value="18">Drama</option>
+            <option value="27">Horror</option>
+        </select>
+    </div>
+    
+    <div id="movies-grid"></div>
+    <div id="watchlist-section">
+       <h2>Your Watchlist</h2>
+       <div id="watchlist-container"></div>
+    </div>
+
+    <div class="modal" id="movie-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="movie-details"></div>
+        </div>
+    </div>
+
+    <script src="s2.js"></script>
+</body>
+</html>
